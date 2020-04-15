@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+  --primary-color: #183f5a;
+  --secondary-color: #226089;
+  --main-font-color: rgb(226, 226, 226);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--main-font-color);
+  font-family: 'Lato', sans-serif;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+h1 {
+  padding-bottom: 20px;
+  margin: 20px 0 0;
+}
+
+header {
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+/****************** Styling the main container ******************/
+.game-container {
+  min-height: 400px;
+  min-width: 600px;
+
+  display: flex;
+  justify-content: space-between;
+}
+.hangman-figure {
+  fill: transparent;
+  stroke: var(--main-font-color);
+  stroke-width: 5px;
+  stroke-linecap: round;
+}
+.hangman-figure .figure-part {
+  display: none;
+}
+.wrong-letters-container {
+  text-align: right;
+}
+
+.wrong-letters-container p {
+  margin: 0 0 5px;
+}
+.wrong-letters-container span {
+  font-size: 1.7rem;
+}
+
+/****************** Styling the bottom correct word place holders ******************/
+.word {
+  display: flext;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.letter {
+  font-size: 2.2rem;
+  padding: 5px 5px;
+  border-bottom: 3px solid var(--secondary-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/****************** Styling The Modal ******************/
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: none;
+}
+.modal-container.show-modal {
+  display: block;
+}
+
+.modal {
+  background-color: var(--secondary-color);
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.3);
+}
+.modal h2 {
+  padding: 40px;
+  margin: 0;
+}
+.modal button {
+  background-color: var(--main-font-color);
+  color: var(--secondary-color);
+  border: 0;
+  border-radius: 5px;
+
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modal button:focus {
+  outline: 0;
+}
+.modal button:active {
+  transform: scale(0.95);
+}
+
+/****************** Styling Notification ******************/
+.notification-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 15px 20px;
+
+  position: fixed;
+  bottom: -50px;
+
+  transform: transform 0.3 ease-in-out;
+}
+.notification-container.show-notification {
+  transform: translateY(-50px);
+}
