@@ -51,10 +51,10 @@ header {
 .hangman-figure .figure-part {
   display: none;
 }
+
 .wrong-letters-container {
   text-align: right;
 }
-
 .wrong-letters-container p {
   margin: 0 0 5px;
 }
@@ -64,17 +64,20 @@ header {
 
 /****************** Styling the bottom correct word place holders ******************/
 .word {
-  display: flext;
+  display: flex;
   justify-content: space-evenly;
-  text-align: center;
 }
 .letter {
   font-size: 2.2rem;
-  padding: 5px 5px;
   border-bottom: 3px solid var(--secondary-color);
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
+
+  min-width: 40px;
+  min-height: 60px;
+  margin-right: 5px;
 }
 
 /****************** Styling The Modal ******************/
