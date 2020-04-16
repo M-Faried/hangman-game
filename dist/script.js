@@ -5,6 +5,7 @@ const notificationContainer = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
 const bodyParts = document.querySelectorAll('.figure-part');
 const playAgainButton = document.getElementById('play-button');
+const funFact = document.getElementById('fun-fact');
 
 ///////////////////////////////////////////////////// Load
 
@@ -35,6 +36,7 @@ function getRandomWord() {
         .filter((literal) => isValidWord(literal));
 
       selectedWord = allWords[getRandomInt(allWords.length)];
+      updateFunFact(data.text);
       updateCorrectLetterElements();
     })
     .catch((error) => {
@@ -104,6 +106,10 @@ function updateWrongLetterElements() {
     finalMessage.innerHTML = 'Unfortunately, you lost! &#128530;';
     modalContainer.classList.add('show-modal');
   }
+}
+
+function updateFunFact(fact) {
+  funFact.innerText = fact;
 }
 
 function getRandomInt(max) {
