@@ -31,13 +31,12 @@ h1 {
 
 header {
   text-align: center;
+  padding-top: 20px;
   padding-bottom: 100px;
 }
 header a {
   color: var(--main-font-color);
-  text-decoration: none;
   cursor: pointer;
-  margin-top: 50px;
 }
 
 /****************** Styling the main container ******************/
